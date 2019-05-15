@@ -39,11 +39,7 @@ func main() {
 	if len(os.Args) > 1 {
 
 		flags, vars := processArgs()
-
 		recursive := contains(flags, "r")
-
-		//fmt.Println(flags)
-		//fmt.Println(vars)
 
 		if len(vars) > 0 {
 
@@ -81,6 +77,7 @@ func confirm(path string) bool {
 
 func checkError(err error) {
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		os.Exit(1)
 	}
 }
